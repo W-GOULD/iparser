@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.60 scan initiated Wed Dec 13 13:44:04 2017 as: nmap -sV -F -oX nmap_scan 10.0.2.15-17 -->
+<nmaprun scanner="nmap" args="nmap -sV -F -oX nmap_scan 10.0.2.15-17" start="1513172644" startstr="Wed Dec 13 13:44:04 2017" version="7.60" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="100" services="7,9,13,21-23,25-26,37,53,79-81,88,106,110-111,113,119,135,139,143-144,179,199,389,427,443-445,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000-6001,6646,7070,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1513172645" endtime="1513172651"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="10.0.2.15" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="98">
+<extrareasons reason="resets" count="98"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="OpenSSH" version="7.6p1 Debian 2" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.6p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache httpd" version="2.4.29" hostname="127.0.1.1" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.29</cpe></service></port>
+</ports>
+<times srtt="7" rttvar="0" to="100000"/>
+</host>
+<runstats><finished time="1513172651" timestr="Wed Dec 13 13:44:11 2017" elapsed="7.00" summary="Nmap done at Wed Dec 13 13:44:11 2017; 3 IP addresses (1 host up) scanned in 7.00 seconds" exit="success"/><hosts up="1" down="2" total="3"/>
+</runstats>
+</nmaprun>

@@ -12,7 +12,7 @@ def main():
     parser.add_argument("--windows", dest="windows_hosts", action="store_true", required=False, help="This will find Windows hosts from the input file.")
     parser.add_argument("--mail", dest="mail_servers", action="store_true", required=False, help="This will find mail servers from the input file.")
     parser.add_argument("--ips", dest="ip_finder", action="store_true", required=False, help="Grab ips from the input file.")
-    parser.add_argument("-t", dest="test", action="store_true", required=False, help=" ")
+    parser.add_argument("--ports", dest="ports", action="store_true", required=False, help="Lists all the ports which were found.")
 
     arguments = parser.parse_args()
     input_file = arguments.input_file
@@ -32,13 +32,24 @@ def main():
         _r = _t.getroot()
 
     if ip_find is True:
+        print("[#]  Printing IPS from input file. ")
         for address in _r.iter('address'):
-            print (address.attrib['addr'])
+            print(" [+]  ", address.attrib['addr'])
 
-    if arguments.test is True:
-        for host in _r:
-            for port in _r.iter('port'):
-                print (port.attrib['portid'])
+    if arguments.ports is True:
+        print("[#]  Finding ports from input file. ")
+        ports = []
+        for port in _r.iter('port'):
+            ports.append(port.attrib['portid'])
+        p = list(set(ports))
+        print ("[#]  Below are the unique port numbers found: ")
+        print (" [+]  ",p)
+
+    if linux is True:
+        print ("[#]  Discovering linux hosts")
+        
+
+
 
 
 if __name__ == "__main__":
